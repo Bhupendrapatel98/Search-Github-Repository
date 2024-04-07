@@ -5,11 +5,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,13 +24,17 @@ import com.google.gson.Gson
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
-
 @Composable
 fun HomeScreen(navHostController: NavHostController) {
     val viewModel: MainViewModel = hiltViewModel()
     var query by rememberSaveable { mutableStateOf("") }
+
+    LaunchedEffect(query) {
+        viewModel.searchRepositories(query)
+    }
+
     val pagingData: LazyPagingItems<RepositoryItem> =
-        viewModel.getRepositories(query).collectAsLazyPagingItems()
+        viewModel.getRepositories().collectAsLazyPagingItems()
 
     Column(
         modifier = Modifier.padding(16.dp),
@@ -41,7 +42,9 @@ fun HomeScreen(navHostController: NavHostController) {
     ) {
         OutlinedTextField(
             value = query,
-            onValueChange = { query = it },
+            onValueChange = { newQuery ->
+                query = newQuery
+            },
             label = { Text("Search Repositories", color = Color.White) },
             modifier = Modifier
                 .fillMaxWidth(),
@@ -65,7 +68,10 @@ fun HomeScreen(navHostController: NavHostController) {
 }
 
 @Composable
-fun RepositoryList(pagingData: LazyPagingItems<RepositoryItem>, navController: NavHostController) {
+fun RepositoryList(
+    pagingData: LazyPagingItems<RepositoryItem>,
+    navController: NavHostController
+) {
     LazyColumn {
         items(pagingData.itemCount) { index ->
             val repository = pagingData[index]
