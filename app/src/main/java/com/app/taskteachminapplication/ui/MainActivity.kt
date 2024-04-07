@@ -1,4 +1,4 @@
-package com.app.taskteachminapplication
+package com.app.taskteachminapplication.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
