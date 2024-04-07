@@ -2,6 +2,11 @@
 
 GitHub Search App is an Android application built using Jetpack Compose, Dagger Hilt, Coroutine Flow, Paging 3, Retrofit, Navigation Controller, Room, Coil, and MVVM architecture. It allows users to search for repositories on GitHub and view detailed information about them.
 
+# Search Optimization
+For improving search functionality, debounce and distinctUntilChanged operators are utilized.
+Debounce ensures that the search query is triggered only after a specified time interval of user inactivity, thus reducing unnecessary API calls and enhancing user experience.
+DistinctUntilChanged ensures that only distinct consecutive search queries are processed, preventing redundant network requests for identical queries.
+
 ## Features
 
 ### Home Page
@@ -36,6 +41,11 @@ GitHub Search App is an Android application built using Jetpack Compose, Dagger 
 - Room: For offline data persistence.
 - Coil: For loading and displaying images.
 - MVVM Architecture: For separating concerns and managing app data.
+- Debounce and distinctUntilChanged:
+  For improving search functionality, debounce and distinctUntilChanged operators are utilized.
+  Debounce ensures that the search query is triggered only after a specified time interval of user inactivity, thus reducing unnecessary API calls and enhancing user experience.
+  DistinctUntilChanged ensures that only distinct consecutive search queries are processed, preventing redundant network requests for identical queries.
+
 
 ## Contributing
 
