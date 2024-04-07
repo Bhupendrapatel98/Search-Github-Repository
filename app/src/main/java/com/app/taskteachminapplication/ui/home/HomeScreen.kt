@@ -1,5 +1,6 @@
 package com.app.taskteachminapplication.ui.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -80,6 +81,12 @@ fun RepositoryItem(repository: RepositoryItem, navController: NavHostController)
     Box(
         modifier = Modifier
             .padding(8.dp)
+            .clickable {
+                val jsonString = Gson().toJson(repository)
+                var encode = URLEncoder.encode(jsonString, StandardCharsets.UTF_8.toString())
+                val encodedUrl = encode.replace("+", "%20")
+                navController.navigate("${MainDestinations.REPOSITORY_DETAILS_ROUTE}/$encodedUrl")
+            }
     ) {
         Card(
             modifier = Modifier
