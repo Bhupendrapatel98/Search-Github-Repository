@@ -7,10 +7,7 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface GithubApiService {
-    @Headers(
-        "Accept: application/vnd.github+json",
-        "Authorization: Bearer <Access_Token>"
-    )
+    @Headers("Accept: application/vnd.github+json", "Authorization: <Api-KEy>")
     @GET("search/repositories")
     suspend fun searchRepositories(
         @Query("q") query: String,

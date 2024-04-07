@@ -18,4 +18,7 @@ interface RepositoryDao {
 
     @Query("SELECT * FROM repositories WHERE name LIKE '%' || :query || '%' OR description LIKE '%' || :query || '%'")
     fun searchRepositories(query: String): PagingSource<Int, RepositoryItem>
+
+    @Query("DELETE FROM repositories")
+    suspend fun deleteAllRepositories()
 }
