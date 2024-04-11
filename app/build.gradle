@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.app.taskteachminapplication'
+    namespace 'com.app.searchgitrepo'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.app.taskteachminapplication"
+        applicationId "com.app.searchgitrepo"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -64,7 +64,7 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
     //compose navigation
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha10"
+    implementation "androidx.navigation:navigation-compose:2.7.7"
     implementation 'androidx.hilt:hilt-navigation-compose:1.2.0'
 
     // Retrofit

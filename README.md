@@ -26,9 +26,9 @@ DistinctUntilChanged ensures that only distinct consecutive search queries are p
 
  - https://github.com/Bhupendrapatel98/Search-Github-Repository.git
 
-3. Open the project in Android Studio.
+2. Open the project in Android Studio.
 
-4. Build and run the project on an Android device or emulator.
+3. Build and run the project on an Android device or emulator.
 
 ## Dependencies
 
@@ -41,13 +41,6 @@ DistinctUntilChanged ensures that only distinct consecutive search queries are p
 - Room: For offline data persistence.
 - Coil: For loading and displaying images.
 - MVVM Architecture: For separating concerns and managing app data.
-- Debounce and distinctUntilChanged:
-  For improving search functionality, debounce and distinctUntilChanged operators are utilized.
-  Debounce ensures that the search query is triggered only after a specified time interval of user inactivity, thus reducing unnecessary API calls and enhancing user experience.
-  DistinctUntilChanged ensures that only distinct consecutive search queries are processed, preventing redundant network requests for identical queries.
 
-
-## Contributing
-
+## Dependencies
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
-
