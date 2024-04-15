@@ -9,6 +9,10 @@ DistinctUntilChanged ensures that only distinct consecutive search queries are p
 
 ## Features
 
+<img src="https://github.com/Bhupendrapatel98/Search-Github-Repository-Compose-Paging3/assets/55411086/57e4cf42-e524-49c8-8d86-7915b6ad8f67" alt="Image 1" width="100">
+<img src="https://github.com/Bhupendrapatel98/Search-Github-Repository-Compose-Paging3/assets/55411086/d851b79a-531f-4353-92fc-ba586d82f222" alt="Image 1" width="100" >
+<img src="https://github.com/Bhupendrapatel98/Search-Github-Repository-Compose-Paging3/assets/55411086/23fd1c8a-53ac-4ea9-aa52-756e21fb8489" alt="Image 1" width="100">
+
 ### Home Page
 - Search bar to search repositories from the GitHub API.
 - Recycler view using card view to display search results.
@@ -42,5 +46,5 @@ DistinctUntilChanged ensures that only distinct consecutive search queries are p
 - Coil: For loading and displaying images.
 - MVVM Architecture: For separating concerns and managing app data.
 
-## Dependencies
+## Contributions
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
